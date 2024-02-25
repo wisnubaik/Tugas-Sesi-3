@@ -1,9 +1,18 @@
-fun main() {
-    val name = "Wisnu A. Pradana"
-    val hobby = "baca buku"
-    val hobbyDescription = "meningkatkan knowledge dan mengembangkan good mindset"
+package id.ac.pnm.ti2b.androidkotlin
 
-    println("Name: $name")
-    println("Hobby: $hobby")
-    println("Description of $hobby: $hobbyDescription")
+fun main(args: Array<String>) {
+    biodata("Wisnu", 32)
+    hobby("baca buku", "memiliki mindset yang baik dan benar")
+}
+
+fun biodata(name:String, age:Int){ // minimal 2 parameter/args
+    println("=====================")
+    println("Nama\t: $name")
+    println("Usia\t: $age")
+    println("=====================")
+}
+
+fun hobby(nama:String, desc:String){
+    println("Saya punya hobby $nama")
+    println("Dengan itu, saya dapat $desc")
 }
