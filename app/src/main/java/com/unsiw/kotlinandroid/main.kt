@@ -1,30 +1,16 @@
 package com.unsiw.kotlinandroid
 
-class Main {
-    class Aquarium {
-        var width: Int = 20
-        var height: Int = 40
-        var length: Int = 100
+fun buildAquarium() {
+    val myAquarium = Aquarium()
+    myAquarium.printSize()
+    myAquarium.height = 60
+    myAquarium.printSize()
+    val aquarium6 = Aquarium(numberOfFish = 29)
+    aquarium6.printSize()
+    aquarium6.volume = 70
+    aquarium6.printSize()
+}
 
-        fun printSize() {
-            println("Width: $width cm " +
-                    "Length: $length cm " +
-                    "Height: $height cm ")
-        }
-    }
-
-    class Main {
-        fun buildAquarium() {
-            val myAquarium = Aquarium()
-            myAquarium.printSize()
-            myAquarium.height = 60
-            myAquarium.printSize()
-        }
-    }
-
-    fun main() {
-        val app = Main()
-        app.buildAquarium()
-    }
-
+fun main() {
+    buildAquarium()
 }
