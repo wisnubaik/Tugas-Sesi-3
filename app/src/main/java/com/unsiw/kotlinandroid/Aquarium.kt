@@ -1,28 +1,32 @@
 package com.unsiw.kotlinandroid
+interface FishAction {
+    fun eat()
+}
 
-class Aquarium(var length: Int = 100, var width: Int = 20, var height: Int = 40) {
-    var volume: Int
-        get() = width * height * length / 1000
-        set(value) {
-            height = (value * 1000) / (width * length)
-        }
+interface FishColor {
+    val color: String
+}
 
-    init {
-        println("aquarium initializing")
+abstract class AquariumFish : FishColor {
+    abstract override val color: String
+}
+
+class Shark : AquariumFish(), FishAction, FishColor {
+    override val color = "grey"
+    override fun eat() {
+        println("hunt and eat fish")
     }
+}
 
-    constructor(numberOfFish: Int) : this() {
-        // 2,000 cm^3 per fish + extra room so water doesn't spill
-        val tank = numberOfFish * 2000 * 1.1
-        // calculate the height needed
-        height = (tank / (length * width)).toInt()
-    }
+class Plecostomus(fishColor: FishColor = GoldColor) : AquariumFish(), FishAction by PrintingFishAction("eat algae"), FishColor by fishColor
 
-    fun printSize() {
-        println("Width: $width cm " +
-                "Length: $length cm " +
-                "Height: $height cm ")
-        // 1 liter = 1000 cm^3
-        println("Volume: $volume liters")
+object GoldColor : FishColor {
+    override val color = "gold"
+}
+
+class PrintingFishAction(private val food: String) : FishAction {
+    override fun eat() {
+        println("eat algae")
+        println(food)
     }
 }
