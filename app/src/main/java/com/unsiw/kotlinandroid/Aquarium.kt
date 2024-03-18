@@ -1,7 +1,6 @@
 package com.unsiw.kotlinandroid
 
 class Aquarium(var length: Int = 100, var width: Int = 20, var height: Int = 40) {
-
     var volume: Int
         get() = width * height * length / 1000
         set(value) {
@@ -26,12 +25,4 @@ class Aquarium(var length: Int = 100, var width: Int = 20, var height: Int = 40)
         // 1 liter = 1000 cm^3
         println("Volume: $volume liters")
     }
-}
-
-fun main() {
-    val aquarium1 = Aquarium()
-    aquarium1.printSize()
-
-    val aquarium2 = Aquarium(10)
-    aquarium2.printSize()
 }
