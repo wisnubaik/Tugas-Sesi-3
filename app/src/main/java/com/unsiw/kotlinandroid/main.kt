@@ -1,16 +1,30 @@
-package id.ac.pnm.ti2b.androidkotlin.com.unsiw.kotlinandroid
+package com.unsiw.kotlinandroid
 
-fun main(args : Array<String>) {
-    biodata("Wisnu", 5)
-    hobby("bikin lagu ama baca buku", "bisa nuangin apa yg dirasain gitu loh,sama memperbaiki pola pikir yang salah serta meningkatkannya")
-}
-fun biodata(name:String, age:Int) {
-    println("+++++++++++")
-    println("Nama\t: $name")
-    println("Usia\t: $age")
-    println("+++++++++++")
-}
-fun hobby(nama:String, desc:String) {
-    println("saya punya hobby $nama")
-    println("saya ngelakuin sebab itu $desc")
+class Main {
+    class Aquarium {
+        var width: Int = 20
+        var height: Int = 40
+        var length: Int = 100
+
+        fun printSize() {
+            println("Width: $width cm " +
+                    "Length: $length cm " +
+                    "Height: $height cm ")
+        }
+    }
+
+    class Main {
+        fun buildAquarium() {
+            val myAquarium = Aquarium()
+            myAquarium.printSize()
+            myAquarium.height = 60
+            myAquarium.printSize()
+        }
+    }
+
+    fun main() {
+        val app = Main()
+        app.buildAquarium()
+    }
+
 }
