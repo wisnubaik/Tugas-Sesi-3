@@ -18,6 +18,10 @@ fun makeDecorations() {
 
 fun main() {
     makeDecorations()
+
+    println(Direction.EAST.name)
+    println(Direction.EAST.ordinal)
+    println(Direction.EAST.degrees)
 }
 
 enum class Direction(val degrees: Int) {
